@@ -15,5 +15,5 @@ dependencies {
 }
 
 test {
-    useJUnitPlatform()
+    useJUnitPlatform()  //подключение библиотеки для запуска тестов (зеленый треугольник)
 }
