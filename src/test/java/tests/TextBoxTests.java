@@ -17,20 +17,26 @@ public class TextBoxTests {
     public static void setUp() {
         Configuration.browserSize = "1920x1080";  // Устанавливаем размер окна браузера
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
+        Configuration.holdBrowserOpen = false; // используется только для отладки тестов (установить значение true)
         Configuration.timeout = 5000; // default 4000
-        open("https://demoqa.com/automation-practice-form");  // Открываем нужный сайт
+        Configuration.baseUrl = "https://demoqa.com"; // устанавливаем базовый URL
     }
 
     @Test
-    public void testFormSubmission() {
+    public void formSubmissionTest() {
+        open("/automation-practice-form"); // относительный путь
+
+        // Удаляем баннер и футер через JavaScript
+        executeJavaScript("$('#fixedban').remove();");
+        executeJavaScript("$('footer').remove();");
+
         // Заполняем поля имени, фамилии и email
         $("#firstName").setValue("John");
         $("#lastName").setValue("Doe");
         $("#userEmail").setValue("johndoe@example.com");
 
         // Выбираем пол (Male)
-        $(By.cssSelector("label[for='gender-radio-1']")).scrollTo().click();
+        $("[for='gender-radio-1']").click();
 
         // Вводим номер телефона
         $("#userNumber").setValue("1234567890");
@@ -49,8 +55,9 @@ public class TextBoxTests {
 
 
         // Загружаем файл
-        String filePath = "src/test/resources/testfile.png";
-        $("#uploadPicture").uploadFile(new File(filePath));
+        //String filePath = "src/test/resources/testfile.png";
+        //$("#uploadPicture").uploadFile(new File(filePath));
+        $("#uploadPicture").uploadFromClasspath("testfile.png");
 
 
         // Вводим адрес
@@ -67,37 +74,38 @@ public class TextBoxTests {
         $(".modal-title").shouldHave(text("Thanks for submitting the form"));
 
         // Проверяем значения в модальном окне используя CSS селекторы
-        $("body > div.fade.modal.show > div > div > div.modal-body > div > table > tbody > tr:nth-child(1) > td:nth-child(2)")
+        $(".table-responsive tbody tr:nth-child(1) td:nth-child(2)")
                 .shouldHave(text("John Doe"));
 
-        $("body > div.fade.modal.show > div > div > div.modal-body > div > table > tbody > tr:nth-child(2) > td:nth-child(2)")
+
+        $(".table-responsive tbody tr:nth-child(2) td:nth-child(2)")
                 .shouldHave(text("johndoe@example.com"));
 
-        $("body > div.fade.modal.show > div > div > div.modal-body > div > table > tbody > tr:nth-child(3) > td:nth-child(2)")
+        $(".table-responsive tbody tr:nth-child(3) td:nth-child(2)")
                 .shouldHave(text("Male"));
 
-        $("body > div.fade.modal.show > div > div > div.modal-body > div > table > tbody > tr:nth-child(4) > td:nth-child(2)")
+        $(".table-responsive tbody tr:nth-child(4) td:nth-child(2)")
                 .shouldHave(text("1234567890"));
 
-        $("body > div.fade.modal.show > div > div > div.modal-body > div > table > tbody > tr:nth-child(5) > td:nth-child(2)")
+        $(".table-responsive tbody tr:nth-child(5) td:nth-child(2)")
                 .shouldHave(text("06 September,2024"));
 
-        $("body > div.fade.modal.show > div > div > div.modal-body > div > table > tbody > tr:nth-child(6) > td:nth-child(2)")
+        $(".table-responsive tbody tr:nth-child(6) td:nth-child(2)")
                 .shouldHave(text("Maths"));
 
-        $("body > div.fade.modal.show > div > div > div.modal-body > div > table > tbody > tr:nth-child(7) > td:nth-child(2)")
+        $(".table-responsive tbody tr:nth-child(7) td:nth-child(2)")
                 .shouldHave(text("Sports"));
 
-        $("body > div.fade.modal.show > div > div > div.modal-body > div > table > tbody > tr:nth-child(8) > td:nth-child(2)")
+        $(".table-responsive tbody tr:nth-child(8) td:nth-child(2)")
                 .shouldHave(text("testfile.png"));
 
-        $("body > div.fade.modal.show > div > div > div.modal-body > div > table > tbody > tr:nth-child(9) > td:nth-child(2)")
+        $(".table-responsive tbody tr:nth-child(9) td:nth-child(2)")
                 .shouldHave(text("1234 Main St, Springfield"));
 
-        $("body > div.fade.modal.show > div > div > div.modal-body > div > table > tbody > tr:nth-child(10) > td:nth-child(2)")
+        $(".table-responsive tbody tr:nth-child(10) td:nth-child(2)")
                 .shouldHave(text("NCR Delhi"));
 
-                // Нажимаем на кнопку Close, чтобы закрыть модальное окно
+        // Нажимаем на кнопку Close, чтобы закрыть модальное окно
         $(By.cssSelector("#closeLargeModal")).scrollTo().click();
 
     }
