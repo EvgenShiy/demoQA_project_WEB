@@ -21,8 +21,6 @@ public class RegistrationPage {
                             uploadPicture = $("#uploadPicture"),
                             hobbiesWrapper = $("#hobbiesWrapper"),
                             currentAddress = $("#currentAddress"),
-                            stateInput = $("#react-select-3-input"),
-                            cityInput = $("#react-select-4-input"),
                             submitButton =  $("button#submit");
 
 
