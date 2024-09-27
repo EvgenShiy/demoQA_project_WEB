@@ -50,4 +50,25 @@ public class PracticeWithPageObjectTests extends TestBase {
                 .checkResult("Picture", foto)
                 .checkResult("State and City", state + " " + city);
     }
+
+    @Test
+    public void successRegistrationWithMinimumValueTest() {
+
+        String firstName = "Bred",
+                lastName = "Pit",
+                gender ="Male",
+                phone = "1234567890";
+
+
+        registrationPage.openPage()
+                .setFirstName(firstName)
+                .setLastName(lastName)
+                .setGender(gender)
+                .setUserNumber(phone)
+                .pressSubmitButton();
+
+        registrationPage.checkResult("Student Name", firstName + " " + lastName)
+                .checkResult("Gender", gender)
+                .checkResult("Mobile", phone);
+    }
 }
