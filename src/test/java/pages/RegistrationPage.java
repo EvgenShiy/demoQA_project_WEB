@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
 import pages.components.DropdownComponent;
@@ -22,6 +23,7 @@ public class RegistrationPage {
                             hobbiesWrapper = $("#hobbiesWrapper"),
                             currentAddress = $("#currentAddress"),
                             submitButton =  $("button#submit");
+
 
 
 
@@ -107,6 +109,10 @@ public class RegistrationPage {
     public RegistrationPage checkResult(String key, String value) {
         modalComponent.checkResult(key, value);
         return this;
+    }
+
+    public void negativeCheck() {
+        new ModalComponent().negativeCheck();
     }
 
 }

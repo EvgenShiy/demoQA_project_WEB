@@ -71,4 +71,13 @@ public class PracticeWithPageObjectTests extends TestBase {
                 .checkResult("Gender", gender)
                 .checkResult("Mobile", phone);
     }
+
+    @Test
+    public void requiredFieldsHighlightOnSubmitTest() {
+
+        registrationPage.openPage()
+                .pressSubmitButton();
+
+        registrationPage.negativeCheck();
+    }
 }
