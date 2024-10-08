@@ -18,3 +18,11 @@ dependencies {
 test {
     useJUnitPlatform()  //подключение библиотеки для запуска тестов (зеленый треугольник)
 }
+
+sourceSets {
+    test {
+        resources {
+            srcDirs = ['src/test/resources']
+        }
+    }
+}

@@ -1,29 +1,29 @@
 package tests;
 
 
-import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import utils.RandomUtils;
 
-import static utils.RandomUtils.*;
-
 public class PracticeWithRandomUtilsTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
+    RandomUtils randomUtils = new RandomUtils();
 
-    String firstName = getRandomFirstName();
-    String lastName = getRandomLastName();
-    String userEmail = getRandomEmail();
-    String gender = RandomUtils.getRandomGender();
-    String phone = getRandomPhone();
-    String currentAddress = getRandomAddress();
-    String dayOfBirth = getRandomBirthday();
-    String subjectsInput = getRandomSubject();
-    String hobbies = getRandomHobby();
-    String foto = getRandomFoto();
-    String state = getRandomState();
-    String city = getRandomCity();
+    String firstName = randomUtils.getRandomFirstName();
+    String lastName = randomUtils.getRandomLastName();
+    String userEmail = randomUtils.getRandomEmail();
+    String gender = randomUtils.getRandomGender();
+    String phone = randomUtils.getRandomPhone();
+    String currentAddress = randomUtils.getRandomAddress();
+    String dayOfBirth = randomUtils.getRandomDayOfBirth();
+    String monthOfBirth = randomUtils.getRandomMonthBirth();
+    String yearOfBirth = randomUtils.getRandomYearOfBirth();
+    String subjectsInput = randomUtils.getRandomSubject();
+    String hobbies = randomUtils.getRandomHobby();
+    String foto = randomUtils.getRandomFoto();
+    String state = randomUtils.getRandomState();
+    String city = randomUtils.getRandomCity(state);
 
 
     @Test
