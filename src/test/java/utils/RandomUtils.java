@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class RandomUtils {
 
-    private static final Faker faker = new Faker(); // Статическое поле для хранения экземпляра Faker
+    private final Faker faker = new Faker();
 
     public static String getRandomString(int length) {
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -25,11 +25,11 @@ public class RandomUtils {
         return min + (int) (Math.random() * ((max - min) + 1));
     }
 
-    public static String getRandomFirstName() {
+    public final String getRandomFirstName() {
         return faker.name().firstName();
     }
 
-    public static String getRandomLastName() {
+    public final String getRandomLastName() {
         return faker.name().lastName();
     }
 
@@ -43,7 +43,7 @@ public class RandomUtils {
         return array[index];
     }
 
-    public static String getRandomPhone() {
+    public final String getRandomPhone() {
         return faker.phoneNumber().subscriberNumber(10);
     }
 
@@ -51,20 +51,20 @@ public class RandomUtils {
         return getRandomString(10) + "@gmail.com";
     }
 
-    public static String getRandomAddress() {
+    public final String getRandomAddress() {
         return faker.address().fullAddress();
     }
 
-    public static String getRandomDayOfBirth() {
+    public final String getRandomDayOfBirth() {
         return String.format("%02d", faker.number().numberBetween(1, 28));
     }
 
-    public static String getRandomMonthBirth() {
+    public final String getRandomMonthBirth() {
         return faker.options().option("January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December");
     }
 
-    public static String getRandomYearOfBirth() {
+    public final String getRandomYearOfBirth() {
         return String.valueOf(faker.number().numberBetween(1900, 2024));
     }
 
