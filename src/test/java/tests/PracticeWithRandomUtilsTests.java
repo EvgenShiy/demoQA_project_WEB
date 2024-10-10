@@ -17,7 +17,7 @@ public class PracticeWithRandomUtilsTests extends TestBase {
     String phone = randomUtils.getRandomPhone();
     String currentAddress = randomUtils.getRandomAddress();
     String dayOfBirth = randomUtils.getRandomDayOfBirth();
-    String monthOfBirth = randomUtils.getRandomMonthBirth();
+    String monthOfBirth = randomUtils.getRandomMonthOfBirth();
     String yearOfBirth = randomUtils.getRandomYearOfBirth();
     String subjectsInput = randomUtils.getRandomSubject();
     String hobbies = randomUtils.getRandomHobby();
