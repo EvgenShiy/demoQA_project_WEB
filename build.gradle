@@ -1,5 +1,20 @@
 plugins {
-    id 'java-library' // используется ЯП java
+    id 'java'
+    id 'io.qameta.allure' version '2.12.0'
+}
+
+allure {
+    report {
+        version.set("2.17.3") //версия Allure Report (https://github.com/allure-framework/allure2)
+    }
+    adapter {
+        aspectjWeaver.set(true) // обработка аннотации @Step
+        frameworks {
+            junit5 {
+                adapterVersion.set("2.17.3") //версия Allure JUnit5 (https://github.com/allure-framework/allure-java)
+            }
+        }
+    }
 }
 
 repositories {
@@ -8,10 +23,12 @@ repositories {
 
 dependencies {
     testImplementation(
-            "com.codeborne:selenide:7.4.3",       // используется библиотека selenide из библиотеки mavenCentral()
-            "org.junit.jupiter:junit-jupiter:5.10.0",   // библиотека junit
-            'org.slf4j:slf4j-simple:2.0.7',   // Логгер для более подробного лога
-            'com.github.javafaker:javafaker:1.0.2'
+            'com.codeborne:selenide:7.5.1',
+            'org.junit.jupiter:junit-jupiter:5.10.0',
+            'org.slf4j:slf4j-simple:2.0.7',
+            'com.github.javafaker:javafaker:1.0.2',
+            'org.apache.logging.log4j:log4j-core:2.20.0',
+            'io.qameta.allure:allure-selenide:2.29.0'
     )
 }
 
