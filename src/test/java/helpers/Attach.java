@@ -44,7 +44,10 @@ public class Attach {
     }
 
     public static URL getVideoUrl() {
-        String videoUrl = "https://selenoid.autotests.cloud/video/" + sessionId() + ".mp4";
+        // Получаем URL из переменной среды или системного свойства
+        String videoHost = System.getProperty("videoHost", "https://selenoid.autotests.cloud/video/");
+        String videoUrl = videoHost + sessionId() + ".mp4";
+
         try {
             return new URL(videoUrl);
         } catch (MalformedURLException e) {

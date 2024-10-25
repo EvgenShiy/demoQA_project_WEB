@@ -1,21 +1,23 @@
 package tests;
 
-import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attach;
-import io.qameta.allure.selenide.AllureSelenide;
+import io.qameta.allure.Owner;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class PracticeWithJenkinsTests extends TestBase {
 
 
     @Test
+    @Tag("demoqa")
+    @Owner("shiianovaen")
+    @DisplayName("Проверка заполнения полей формы регистрации")
     public void successRegistrationWithFullValueForJenkinsTest() {
 
-//        SelenideLogger.addListener("allure", new AllureSelenide());
         WebSteps steps = new WebSteps();
 
         steps.openStudentRegistrationForm();
-//        steps.takeScreenshot();
         steps.setFirstName();
         steps.setLastName();
         steps.setUserEmail();
@@ -28,7 +30,6 @@ public class PracticeWithJenkinsTests extends TestBase {
         steps.setCurrentAddress();
         steps.setState();
         steps.setCity();
-//        steps.takeScreenshot();
         steps.pressSubmitButton();
 
         steps.checkResultStudentName();
@@ -40,7 +41,6 @@ public class PracticeWithJenkinsTests extends TestBase {
         steps.checkResultHobbies();
         steps.checkResultPicture();
         steps.checkResultStateAndCity();
-//        steps.takeScreenshot();
 
         Attach.addVideo();
 

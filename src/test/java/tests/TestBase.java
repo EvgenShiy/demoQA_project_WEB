@@ -17,8 +17,16 @@ public class TestBase {
 
     @BeforeAll
     public static void setUp() {
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-        Configuration.browserSize = "1920x1080";  // Устанавливаем размер окна браузера
+
+        String browserSize = System.getProperty("browserSize", "1920x1080");
+        String browserName = System.getProperty("browser", "chrome");
+        String browserVersion = System.getProperty("browserVersion", "116");
+        String remoteDriverURL = System.getProperty("remoteDriverURL", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+
+        Configuration.remote = remoteDriverURL;
+        Configuration.browser = browserName;
+        Configuration.browserSize = browserSize;  // Устанавливаем размер окна браузера
+        Configuration.browserVersion = browserVersion;
         Configuration.pageLoadStrategy = "eager"; // Оптимизация загрузки страницы
         Configuration.holdBrowserOpen = false;    // Использовать true для отладки
         Configuration.baseUrl = "https://demoqa.com"; // Базовый URL
