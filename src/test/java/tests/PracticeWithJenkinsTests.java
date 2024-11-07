@@ -12,7 +12,7 @@ public class PracticeWithJenkinsTests extends TestBase {
     @Test
     @Tag("demoqa")
     @Owner("shiianovaen")
-    @DisplayName("Проверка заполнения полей формы регистрации")
+    @DisplayName("Проверка заполнения всех полей формы регистрации")
     public void successRegistrationWithFullValueForJenkinsTest() {
 
         WebSteps steps = new WebSteps();
@@ -44,6 +44,40 @@ public class PracticeWithJenkinsTests extends TestBase {
 
         Attach.addVideo();
 
+    }
+
+    @Test
+    @Tag("demoqa")
+    @Owner("shiianovaen")
+    @DisplayName("Проверка только обязательных полей формы регистрации")
+    public void successRegistrationWithMinimumValueForJenkinsTest() {
+
+        WebSteps steps = new WebSteps();
+
+        steps.openStudentRegistrationForm();
+        steps.setFirstName();
+        steps.setLastName();
+        steps.setGender();
+        steps.setUserNumber();
+        steps.pressSubmitButton();
+
+        steps.checkResultStudentName();
+        steps.checkResultGender();
+        steps.checkResultMobile();
+    }
+
+    @Test
+    @Tag("demoqa")
+    @Owner("shiianovaen")
+    @DisplayName("Проверка подсветки заполнения обязательных полей формы регистрации")
+    public void requiredFieldsHighlightOnSubmitForJenkinsTest() {
+
+        WebSteps steps = new WebSteps();
+
+        steps.openStudentRegistrationForm();
+        steps.pressSubmitButton();
+
+        steps.checkEmptyRequiredFields();
     }
 
 }

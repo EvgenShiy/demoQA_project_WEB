@@ -143,6 +143,11 @@ public class WebSteps extends  TestBase {
         registrationPage.checkResult("State and City", state + " " + city);
     }
 
+    @Step("Проверяем, что обязательные поля подсвечиваются, если они не заполнены")
+    public void checkEmptyRequiredFields(){
+        registrationPage.negativeCheck();
+    }
+
     @Attachment(value = "Screenshot", type = "image/png", fileExtension = "png")
     public byte[] takeScreenshot() {
         return ((TakesScreenshot) WebDriverRunner.getWebDriver()).getScreenshotAs(OutputType.BYTES);

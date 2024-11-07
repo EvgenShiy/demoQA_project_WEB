@@ -109,8 +109,8 @@ public class RegistrationPage {
         return this;
     }
 
-//    public void negativeCheck() {
-//        new ModalComponent().negativeCheck();
-//    }
+    public void negativeCheck() {
+        new ModalComponent().negativeCheck();
+    }
 
 }
