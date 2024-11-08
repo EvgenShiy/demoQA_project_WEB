@@ -5,18 +5,24 @@
 
 ---
 ## Содержание
-- Технологии и инструменты
 - Тест-кейсы
+- Технологии и инструменты
 - Запуск тестов в Jenkins
 - Allure Report
 - Уведомление о результатах тестов в Telegram
-- Видео прохождения тестов в Selenoid
-
+- Видео прохождения тестов в Selenoid  
+---
+## Тест-кейсы
+1. Проверка корректного заполнения всех полей формы регистрации.
+2. Проверка корректного заполнения только обязательных полей формы регистрации.
+3. Проверка подсветки обязательных полей, если они не заполнены.
 ---
 ## Технологии и инструменты
 
 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg"  height="40" width="40"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-original-wordmark.svg"  height="40" width="40"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gradle/gradle-original-wordmark.svg"  height="40" width="40"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" height="40" width="40"/>
+<p align="center">
+  <img src="assets/images/java.png" alt="Java Logo" width="100">
+  <img src="assets/images/allure_report.png" alt="Allure Report Logo Logo" width="100">
+  <img src="assets/images/jenkins.png" alt="Jenkins Logo" width="100">
+</p>
+
