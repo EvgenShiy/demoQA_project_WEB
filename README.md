@@ -21,8 +21,8 @@
 
 
 <p align="center">
-  <img src="assets/images/java.png" alt="Java Logo" width="100">
-  <img src="assets/images/allure_report.png" alt="Allure Report Logo Logo" width="100">
-  <img src="assets/images/jenkins.png" alt="Jenkins Logo" width="100">
+  <img src="assets/images/java.png" alt="Java Logo" width="80">
+  <img src="assets/images/allure_report.png" alt="Allure Report Logo Logo" width="80">
+  <img src="assets/images/jenkins.png" alt="Jenkins Logo" width="80">
 </p>
 
