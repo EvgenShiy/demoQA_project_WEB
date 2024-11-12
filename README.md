@@ -71,7 +71,7 @@ demoqa_test
 
 ## <img src="assets/logo/Allure_Report.svg" height="25" width="25"/></a> <a id="отчет-о-выполнении-тестов-в-allure-report"></a>Отчет о выполнении тестов в [Allure Report](https://jenkins.autotests.cloud/job/shiian_demoQA_tests/2/allure/)
 
-<img src="assets/images/AllureReport_exampl.png" style="width:100%;">  
+<img src="assets/images/AllureReport_overview.png" style="width:100%;">  
 
 Шаги выполнения на примере Тест-кейса №2 "Проверка заполнения всех полей формы регистрации":  
 
