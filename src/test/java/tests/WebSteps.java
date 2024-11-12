@@ -8,6 +8,8 @@ import org.openqa.selenium.TakesScreenshot;
 import pages.RegistrationPage;
 import utils.RandomUtils;
 
+import static com.codeborne.selenide.Selenide.executeJavaScript;
+
 public class WebSteps {
 
     RegistrationPage registrationPage = new RegistrationPage();

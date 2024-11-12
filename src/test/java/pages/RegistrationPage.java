@@ -33,6 +33,7 @@ public class RegistrationPage {
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove();");
         executeJavaScript("$('footer').remove();");
+
         return this;
     }
 
@@ -41,13 +42,11 @@ public class RegistrationPage {
         return this;
     }
 
-
     public RegistrationPage setLastName(String value) {
         lastNameInput.setValue(value);
         return this;
     }
-    
-    
+
     public RegistrationPage setUserEmail(String value) {
         userEmailInput.setValue(value);
         return this;
@@ -101,7 +100,6 @@ public class RegistrationPage {
 
     public void pressSubmitButton() {
         submitButton.click();
-
     }
 
     public RegistrationPage checkResult(String key, String value) {
