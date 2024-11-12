@@ -8,7 +8,7 @@ import org.openqa.selenium.TakesScreenshot;
 import pages.RegistrationPage;
 import utils.RandomUtils;
 
-public class WebSteps extends  TestBase {
+public class WebSteps {
 
     RegistrationPage registrationPage = new RegistrationPage();
     RandomUtils randomUtils = new RandomUtils();
@@ -28,122 +28,122 @@ public class WebSteps extends  TestBase {
     String state = randomUtils.getRandomState();
     String city = randomUtils.getRandomCity(state);
 
-    @Step("Открываем страницу формы регистрации студента")
+    @Step("Открыть страницу формы регистрации студента")
     public void openStudentRegistrationForm() {
         registrationPage.openPage();
     }
 
-    @Step("Заполняем поле 'First Name' случайным значением {firstName}")
+    @Step("Заполнить поле 'First Name' случайным значением {firstName}")
     public void setFirstName() {
         registrationPage.setFirstName(firstName);
     }
 
-    @Step("Заполняем поле 'Last Name' случайным значением {lastName}")
+    @Step("Заполнить поле 'Last Name' случайным значением {lastName}")
     public void setLastName(){
         registrationPage.setLastName(lastName);
     }
 
-    @Step("Заполняем поле 'Email' случайным значением {userEmail}")
+    @Step("Заполнить поле 'Email' случайным значением {userEmail}")
     public void setUserEmail(){
         registrationPage.setUserEmail(userEmail);
     }
 
-    @Step("Выбираем случайный пол {gender}")
+    @Step("Выбрать случайный пол {gender}")
     public void setGender(){
         registrationPage.setGender(gender);
     }
 
-    @Step("Заполняем поле 'Mobile' случайным номером телефона {phone}")
+    @Step("Заполнить поле 'Mobile' случайным номером телефона {phone}")
     public void setUserNumber(){
         registrationPage.setUserNumber(phone);
     }
 
-    @Step("Выбираем случайную дату рождения в поле 'Date of Birth' {dayOfBirth} {monthOfBirth} {yearOfBirth}")
+    @Step("Выбрать случайную дату рождения в поле 'Date of Birth' {dayOfBirth} {monthOfBirth} {yearOfBirth}")
     public void setDateOfBirth(){
         registrationPage.setDateOfBirth(dayOfBirth, monthOfBirth, yearOfBirth);
     }
 
-    @Step("Выбираем случайный предмет {subjectsInput} в поле 'Subjects'")
+    @Step("Выбрать случайный предмет {subjectsInput} в поле 'Subjects'")
     public void setSubjectsInput(){
         registrationPage.setSubjectsInput(subjectsInput);
     }
 
-    @Step("Выбираем случайное хобби {hobbies} в поле 'Hobbies'")
+    @Step("Выбрать случайное хобби {hobbies} в поле 'Hobbies'")
     public void setHobbies(){
         registrationPage.setHobbies(hobbies);
     }
 
-    @Step("Устанавливаем случайное фото {foto} в поле 'Picture'")
+    @Step("Загрузить случайную картинку {foto} в поле 'Picture'")
     public void uploadPicture(){
         registrationPage.uploadPicture(foto);
     }
 
-    @Step("Заполняем случайный адрес {currentAddress} в поле 'Current Address'")
+    @Step("Заполнить случайный адрес {currentAddress} в поле 'Current Address'")
     public void setCurrentAddress(){
         registrationPage.setCurrentAddress(currentAddress);
     }
 
-    @Step ("Выбираем случайный штат {state} из списка 'Select State'")
+    @Step ("Выбрать случайный штат {state} из списка 'Select State'")
     public void setState(){
         registrationPage.setState(state);
     }
 
-    @Step ("Выбираем случайный город {city} из списка 'Select City'")
+    @Step ("Выбрать случайный город {city} из списка 'Select City'")
     public void setCity(){
         registrationPage.setCity(city);
     }
 
-    @Step("Нажимаем кнопку 'Submit'")
+    @Step("Нажать кнопку 'Submit'")
     public void pressSubmitButton(){
         registrationPage.pressSubmitButton();
     }
 
-    @Step ("Проверяем, что поле 'Student Name' корректно заполнено значениями {firstName} и {lastName}")
+    @Step ("Проверить, что поле 'Student Name' корректно заполнено значениями {firstName} и {lastName}")
     public void checkResultStudentName(){
         registrationPage.checkResult("Student Name", firstName + " " + lastName);
     }
 
-    @Step("Проверяем, что поле 'Student Email' корректно заполнено значением {userEmail}")
+    @Step("Проверить, что поле 'Student Email' корректно заполнено значением {userEmail}")
     public void checkResultStudentEmail(){
         registrationPage.checkResult("Student Email", userEmail);
     }
 
-    @Step("Проверяем, что поле 'Gender' корректно заполнено значением {gender}")
+    @Step("Проверить, что поле 'Gender' корректно заполнено значением {gender}")
     public void checkResultGender(){
         registrationPage.checkResult("Gender", gender);
     }
 
-    @Step("Проверяем, что поле 'Mobile' корректно заполнено значением {phone}")
+    @Step("Проверить, что поле 'Mobile' корректно заполнено значением {phone}")
     public void checkResultMobile(){
         registrationPage.checkResult("Mobile", phone);
     }
 
-    @Step("Проверяем, что поле 'Date of Birth' корректно заполнено значениями {dayOfBirth} {monthOfBirth} {yearOfBirth}")
+    @Step("Проверить, что поле 'Date of Birth' корректно заполнено значениями {dayOfBirth} {monthOfBirth} {yearOfBirth}")
     public void checkResultDateOfBirth(){
         registrationPage.checkResult("Date of Birth", dayOfBirth + " " + monthOfBirth + "," + yearOfBirth);
     }
 
-    @Step("Проверяем, что поле 'Subjects' корректно заполнено значением {subjectsInput}")
+    @Step("Проверить, что поле 'Subjects' корректно заполнено значением {subjectsInput}")
     public void checkResultSubjects(){
         registrationPage.checkResult("Subjects", subjectsInput);
     }
 
-    @Step("Проверяем, что поле 'Hobbies' корректно заполнено значением {hobbies}")
+    @Step("Проверить, что поле 'Hobbies' корректно заполнено значением {hobbies}")
     public void checkResultHobbies(){
         registrationPage.checkResult("Hobbies", hobbies);
     }
 
-    @Step("Проверяем, что поле 'Picture' корректно заполнено значением {foto}")
+    @Step("Проверить, что поле 'Picture' корректно заполнено значением {foto}")
     public void checkResultPicture(){
         registrationPage.checkResult("Picture", foto);
     }
 
-    @Step("Проверяем, что поле 'State and City' корректно заполнено значениями {state} и {city}")
+    @Step("Проверить, что поле 'State and City' корректно заполнено значениями {state} и {city}")
     public void checkResultStateAndCity(){
         registrationPage.checkResult("State and City", state + " " + city);
     }
 
-    @Step("Проверяем, что обязательные поля подсвечиваются, если они не заполнены")
+    @Step("Проверить, что обязательные поля подсвечиваются, если они не заполнены")
     public void checkEmptyRequiredFields(){
         registrationPage.negativeCheck();
     }
@@ -152,10 +152,4 @@ public class WebSteps extends  TestBase {
     public byte[] takeScreenshot() {
         return ((TakesScreenshot) WebDriverRunner.getWebDriver()).getScreenshotAs(OutputType.BYTES);
     }
-
-
-
-
-
-
 }

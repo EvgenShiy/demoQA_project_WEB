@@ -49,7 +49,7 @@ public class PracticeWithJenkinsTests extends TestBase {
     @Test
     @Tag("demoqa")
     @Owner("shiianovaen")
-    @DisplayName("Проверка только обязательных полей формы регистрации")
+    @DisplayName("Проверка заполнения только обязательных полей формы регистрации")
     public void successRegistrationWithMinimumValueForJenkinsTest() {
 
         WebSteps steps = new WebSteps();
@@ -69,7 +69,7 @@ public class PracticeWithJenkinsTests extends TestBase {
     @Test
     @Tag("demoqa")
     @Owner("shiianovaen")
-    @DisplayName("Проверка подсветки заполнения обязательных полей формы регистрации")
+    @DisplayName("Проверка подсветки обязательных полей формы регистрации, если они не заполнены")
     public void requiredFieldsHighlightOnSubmitForJenkinsTest() {
 
         WebSteps steps = new WebSteps();
@@ -79,5 +79,4 @@ public class PracticeWithJenkinsTests extends TestBase {
 
         steps.checkEmptyRequiredFields();
     }
-
 }
