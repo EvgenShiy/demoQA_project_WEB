@@ -22,7 +22,7 @@
 
 Проект реализован с использованием **[PageObject](https://martinfowler.com/bliki/PageObject.html)** для структурирования кода и облегчения его поддержки, а также включает **генерацию тестовых данных** для повышения гибкости и точности проверок.
 
-Основные технологии и инструменты, применяемые в проекте, включают **[Java](https://www.java.com/)**, **[Gradle](https://gradle.org/)**, **[Selenide](https://selenide.org/)** для автоматизации взаимодействия с веб-страницей, а также **[Selenoid](https://aerokube.com/selenoid/)** для запуска тестов в разных браузерах и **[Allure Report](https://github.com/allure-framework/allure2)** для отчетов о прохождении тестов. **[Jenkins](https://www.jenkins.io/)** используется для CI/CD, а **Telegram бот** уведомляет о результатах тестов.
+Основные технологии и инструменты, применяемые в проекте, включают **[Java](https://www.java.com/)**, **[Gradle](https://gradle.org/)**, **[Selenide](https://selenide.org/)** для автоматизации взаимодействия с веб-страницей, а также **[Selenoid](https://aerokube.com/selenoid/)** для запуска тестов в разных браузерах и **[Allure Report](https://github.com/allure-framework/allure2)** для отчетов о прохождении тестов. **[JUnit 5](https://junit.org/junit5/)** используется для организации и выполнения тестов, **[Jenkins](https://www.jenkins.io/)** применяется для CI/CD, а **Telegram бот** уведомляет о результатах тестов.
 
 
 <img src="assets/images/form.png" style="width:100%;">
