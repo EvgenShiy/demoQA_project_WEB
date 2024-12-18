@@ -25,7 +25,6 @@ public interface WebDriverConfig extends Config {
 
 
     @Key("remoteUrl")
-    @DefaultValue("https://user1:1234@selenoid.autotests.cloud/wd/hub")
     URL getRemoteUrl();
 
     @Key("pageLoadStrategy")
