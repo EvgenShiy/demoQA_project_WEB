@@ -2,6 +2,7 @@ package config;
 
 import com.codeborne.selenide.Configuration;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -17,9 +18,11 @@ public class ConfigRunner {
         createWebDriver();
     }
 
-    private void createWebDriver(){
+    private void createWebDriver() {
 
-        if (config.getRemoteUrl() != null){
+        if (config.getRemoteUrl() == null) {
+            WebDriverManager.chromedriver().setup();
+        } else {
             Configuration.remote = config.getRemoteUrl().toString();
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
